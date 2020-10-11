@@ -7,9 +7,11 @@ import { products } from 'src/app/products';
   styleUrls: ['./product-listings.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  products = products;
+  products: any;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.products = products;
+  }
 }
