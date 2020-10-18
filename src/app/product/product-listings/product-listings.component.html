@@ -4,7 +4,7 @@
     <div *ngFor="let product of products; let productId = index" class="col-sm">
       <div class="card" style="width: 18rem; min-height: 400px;">
         <img
-          src="/assets/img/placeholder-image.png"
+          src="{{ product.coverImage }}"
           class="card-img-top"
           alt="..."
         />
