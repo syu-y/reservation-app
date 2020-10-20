@@ -9,4 +9,11 @@ router.get('', (req, res) => {
   });
 });
 
+router.get('/:productId', (req, res) => {
+  const productId = req.params.productId;
+  Product.findById(productId, (err, foundProduct) => {
+    res.json(foundProduct);
+  });
+});
+
 module.exports = router;
