@@ -9,7 +9,7 @@ mongoose.connect(config.DB_URI,{
 }).then(
   () => {
     const sampleDb = new SampleDb();
-    sampleDb.seeDb();
+    sampleDb.initDb();
 });
 
 const app = express();

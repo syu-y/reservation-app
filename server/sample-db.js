@@ -65,6 +65,15 @@ class SampleDb {
     });
   }
 
+  async initDb() {
+    await this.cleanDb();
+    this.pushProductsToDb();
+  }
+
+  async cleanDb() {
+    await Product.deleteMany({});
+  }
+
   seeDb() {
     this.pushProductsToDb();
   }
