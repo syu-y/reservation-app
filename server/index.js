@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const config = require('./config/dev');
 const SampleDb = require('./sample-db');
 
+const productRouter = require('./routes/products');
+
 mongoose.connect(config.DB_URI,{
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -14,9 +16,7 @@ mongoose.connect(config.DB_URI,{
 
 const app = express();
 
-app.get('/products', (req, res) => {
-  res.json({ 'success': true });
-});
+app.use('/api/v1/products', productRouter);
 
 const PORT = process.env.PORT || '3001';
 
