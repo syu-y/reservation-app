@@ -8,9 +8,9 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<any> {
-    return this.http.get('http://localhost:3001/api/v1/products/');
+    return this.http.get('/api/v1/products/');
   }
-  getProductById(productId: number) {
-    return products[productId];
+  getProductById(productId: string): Observable<any> {
+    return this.http.get('/api/v1/products/' + productId);
   }
 }
